@@ -12,6 +12,7 @@ export async function seed(knex) {
       author: 'Fyodor Dostoevsky',
       summary: 'Nice guy moves to St. Petersburg, things do not go well.',
       attribute: 'Fancy Words, Deep Thoughts',
+      cover_url: '',
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ export async function seed(knex) {
       author: 'Donna Tartt',
       summary: 'Boy steals painting, has eventful decade.',
       attribute: 'Chaos Ensues',
+      cover_url: '',
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ export async function seed(knex) {
       author: 'George Orwell',
       summary: 'Man discovers diary-writing is a bad hobby choice.',
       attribute: 'Sharp Satire',
+      cover_url: '',
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ export async function seed(knex) {
       author: 'Emily Brontë',
       summary: 'Neighbors with boundary issues have rocky relationship.',
       attribute: 'Endless Family Drama',
+      cover_url: '',
     },
     {
       id: 5,
@@ -40,6 +44,7 @@ export async function seed(knex) {
       author: 'Herman Melville',
       summary: 'Man really dislikes specific whale.',
       attribute: 'Adventure',
+      cover_url: '',
     },
     {
       id: 6,
@@ -47,6 +52,7 @@ export async function seed(knex) {
       author: 'William Shakespeare',
       summary: 'Teens make hasty decisions, parents disapprove.',
       attribute: 'Endless Family Drama',
+      cover_url: '',
     },
     {
       id: 7,
@@ -54,6 +60,7 @@ export async function seed(knex) {
       author: 'Homer',
       summary: 'Man takes scenic route home from work.',
       attribute: 'Hero Journey',
+      cover_url: '',
     },
     {
       id: 8,
@@ -61,6 +68,7 @@ export async function seed(knex) {
       author: 'William Shakespeare',
       summary: 'Family reunion goes poorly.',
       attribute: 'Endless Family Drama',
+      cover_url: '',
     },
   ])
 }

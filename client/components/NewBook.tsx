@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useAddBook } from '../hooks/hooks'
+import { fetchBookCover, useAddBook } from '../hooks/hooks'
 import { Link } from 'react-router-dom'
 import { bookAttributes } from './FindBook'
 
@@ -10,6 +10,7 @@ export function NewBook() {
   const [author, setAuthor] = useState('')
   const [summary, setSummary] = useState('')
   const [showMessage, setShowMessage] = useState(false)
+  const [coverUrl, setCoverUrl] = useState<string | null>(null)
   const [attributes, setAttributes] = useState<BookAttribute[]>([])
 
   const addBookMutation = useAddBook()
@@ -23,6 +24,16 @@ export function NewBook() {
     }
   }, [showMessage])
 
+  useEffect(() => {
+    const fetchCover = async () => {
+      if (title && author) {
+        const url = await fetchBookCover(title, author)
+        setCoverUrl(url)
+      }
+    }
+    fetchCover()
+  }, [title, author])
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
@@ -31,12 +42,14 @@ export function NewBook() {
         author,
         summary,
         attribute: attributes.join(', '),
+        cover_url: coverUrl,
       })
 
       setTitle('')
       setAuthor('')
       setSummary('')
       setAttributes([])
+      setCoverUrl(null)
       setShowMessage(true)
     } catch (error) {
       console.error('Error adding book:', error)
@@ -117,7 +130,19 @@ export function NewBook() {
               </div>
             </fieldset>
           </div>
-
+          {coverUrl && (
+            <div className="form-group">
+              <span id="cover-preview-label" className="form-label">
+                Book Cover Preview:
+              </span>
+              <img
+                src={coverUrl}
+                alt="Book cover preview"
+                className="cover-preview"
+                aria-labelledby="cover-preview-label"
+              />
+            </div>
+          )}
           <div className="button-group">
             <button type="submit" className="form-submit">
               Add Book

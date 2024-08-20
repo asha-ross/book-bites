@@ -394,3 +394,9 @@ header::before {
 .book-details {
   flex: 1;
 }
+
+.cover-preview {
+  max-width: 200px;
+  max-height: 300px;
+  object-fit: contain;
+}
