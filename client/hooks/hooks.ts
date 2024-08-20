@@ -81,3 +81,31 @@ export function useFindBooks(attribute: string, value: string) {
     enabled: !!attribute && !!value,
   })
 }
+
+export async function fetchBookCover(
+  title: string,
+  author: string,
+): Promise<string | null> {
+  try {
+    const response = await request
+      .get('https://openlibrary.org/search.json')
+      .query({ title: title, author: author })
+
+    const data = response.body
+    if (data.docs && data.docs.length > 0 && data.docs[0].cover_i) {
+      return `https://covers.openlibrary.org/b/id/${data.docs[0].cover_i}-M.jpg`
+    }
+    return null
+  } catch (error) {
+    console.error('Error fetching book cover:', error)
+    return null
+  }
+}
+
+export function useBookCover(title: string, author: string) {
+  return useQuery({
+    queryKey: ['bookCover', title, author],
+    queryFn: () => fetchBookCover(title, author),
+    staleTime: Infinity,
+  })
+}

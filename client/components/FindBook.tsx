@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { X } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { useFindBooks } from '../hooks/hooks'
+import { useBookCover, useFindBooks } from '../hooks/hooks'
+import { BooksData } from '../../models/books'
 
 export const bookAttributes = [
   'Chaos Ensues',
@@ -26,7 +27,42 @@ export const bookAttributes = [
   'Redemption Arc',
 ] as const
 
+interface BookItemProps {
+  book: BooksData
+}
+
 type BookAttribute = (typeof bookAttributes)[number]
+
+function BookItem({ book }: BookItemProps) {
+  const {
+    data: coverUrl,
+    isLoading,
+    error,
+  } = useBookCover(book.title, book.author)
+
+  return (
+    <li className="book-item">
+      {isLoading && <div className="cover-placeholder">Loading cover...</div>}
+      {error && <div className="cover-placeholder">Cover not available</div>}
+      {coverUrl && (
+        <img
+          src={coverUrl}
+          alt={`Cover of ${book.title}`}
+          className="book-cover"
+        />
+      )}
+      <div className="book-details">
+        <h3>{book.title}</h3>
+        <p>By {book.author}</p>
+        <p>{book.summary}</p>
+        <div className="book-attributes">
+          <strong>Attributes:</strong>
+          <p>{book.attribute}</p>
+        </div>
+      </div>
+    </li>
+  )
+}
 
 export default function BookAttributeSelect() {
   const [selectedAttributes, setSelectedAttributes] = useState<BookAttribute[]>(
@@ -86,15 +122,7 @@ export default function BookAttributeSelect() {
           {books && books.length > 0 ? (
             <ul className="book-list">
               {books.map((book) => (
-                <li key={book.id} className="book-item">
-                  <h3>{book.title}</h3>
-                  <p>By {book.author}</p>
-                  <p>{book.summary}</p>
-                  <div className="book-attributes">
-                    <strong>Attributes:</strong>
-                    <p>{book.attribute}</p>
-                  </div>
-                </li>
+                <BookItem key={book.id} book={book} />
               ))}
             </ul>
           ) : (

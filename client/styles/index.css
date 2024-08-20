@@ -367,3 +367,30 @@ header::before {
     font-size: 1.1rem;
   }
 }
+
+.book-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.book-cover,
+.cover-placeholder {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.book-details {
+  flex: 1;
+}

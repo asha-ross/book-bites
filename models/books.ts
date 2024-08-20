@@ -4,6 +4,7 @@ export interface BooksData {
   title: string
   author: string
   summary: string
+  cover_url: string | null
 }
 
 export interface FindBook {
@@ -12,4 +13,5 @@ export interface FindBook {
   author: string
   summary: string
   attribute: string
+  cover_url: string | null
 }

@@ -1,5 +1,6 @@
 import connection from './connection'
 import { FindBook, BooksData } from '../../models/books'
+import { fetchBookCover } from '../../client/hooks/hooks'
 
 const db = connection
 
@@ -9,11 +10,13 @@ export function getAllBooks() {
 
 export async function addBook(book: Omit<BooksData, 'id'>): Promise<number[]> {
   try {
+    const coverUrl = await fetchBookCover(book.title, book.author)
     const result = await db('books').insert({
       title: book.title,
       author: book.author,
       summary: book.summary,
       attribute: book.attribute,
+      cover_url: coverUrl,
     })
     return result
   } catch (error) {

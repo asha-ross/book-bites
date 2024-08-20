@@ -1,6 +1,7 @@
 import { useDeleteBook, useUpdateBook } from '../hooks/hooks'
 import { BooksData } from '../../models/books'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useBookCover } from '../hooks/hooks'
 
 interface BookItemProps {
   book: BooksData
@@ -12,6 +13,14 @@ export function BookUpdate({ book }: BookItemProps) {
 
   const deleteBookMutation = useDeleteBook()
   const updateBookMutation = useUpdateBook()
+  const { data: coverUrl, refetch: refetchCover } = useBookCover(
+    book.author,
+    book.title,
+  )
+
+  useEffect(() => {
+    setEditedBook(book)
+  }, [book])
 
   const handleDelete = () => {
     deleteBookMutation.mutate(book.id)
@@ -26,6 +35,7 @@ export function BookUpdate({ book }: BookItemProps) {
         summary: editedBook.summary,
       },
     })
+    refetchCover()
     setIsEditing(false)
   }
 
@@ -36,41 +46,46 @@ export function BookUpdate({ book }: BookItemProps) {
     setEditedBook((prev) => ({ ...prev, [name]: value }))
   }
 
-  if (isEditing) {
-    return (
-      <div className="book-card editing">
-        <input
-          name="title"
-          value={editedBook.title}
-          onChange={handleInputChange}
-          className="edit-input"
-        />
-        <input
-          name="author"
-          value={editedBook.author}
-          onChange={handleInputChange}
-          className="edit-input"
-        />
-        <textarea
-          name="summary"
-          value={editedBook.summary}
-          onChange={handleInputChange}
-          className="edit-textarea"
-        />
-        <div>
-          <button className="save-button" onClick={handleUpdate}>
-            Save
-          </button>
-          <button className="cancel-button" onClick={() => setIsEditing(false)}>
-            Cancel
-          </button>
-        </div>
+  const renderEditMode = () => (
+    <div className="book-card editing">
+      <input
+        name="title"
+        value={editedBook.title}
+        onChange={handleInputChange}
+        className="edit-input"
+      />
+      <input
+        name="author"
+        value={editedBook.author}
+        onChange={handleInputChange}
+        className="edit-input"
+      />
+      <textarea
+        name="summary"
+        value={editedBook.summary}
+        onChange={handleInputChange}
+        className="edit-textarea"
+      />
+      <div>
+        <button className="save-button" onClick={handleUpdate}>
+          Save
+        </button>
+        <button className="cancel-button" onClick={() => setIsEditing(false)}>
+          Cancel
+        </button>
       </div>
-    )
-  }
+    </div>
+  )
 
-  return (
+  const renderDisplayMode = () => (
     <div className="book-card">
+      {coverUrl && (
+        <img
+          src={coverUrl}
+          alt={`Cover of ${book.title}`}
+          className="book-cover"
+        />
+      )}
       <h2 className="book-title">{book.title}</h2>
       <h3 className="book-author">{book.author}</h3>
       <p className="book-summary">{book.summary}</p>
@@ -85,4 +100,6 @@ export function BookUpdate({ book }: BookItemProps) {
       </div>
     </div>
   )
+
+  return isEditing ? renderEditMode() : renderDisplayMode()
 }
