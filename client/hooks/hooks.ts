@@ -1,6 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import request from 'superagent'
-import { BooksData } from '../../models/books'
+import { BooksData, FindBook } from '../../models/books'
 
 export function useBooks() {
   return useQuery({
@@ -11,18 +11,6 @@ export function useBooks() {
     },
   })
 }
-
-//This doesn't work yet
-// export function useFindBooks({ enabled }: { enabled: boolean }) {
-//   return useQuery({
-//     queryKey: ['findbooks'],
-//     queryFn: async () => {
-//       const data = await request.get('/api/v1/findbooks')
-//       return data.body as FindBook[]
-//     },
-//     enabled: enabled,
-//   })
-// }
 
 export function useAddBook() {
   const queryClient = useQueryClient()
@@ -67,5 +55,21 @@ export function useUpdateBook() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['books'] })
     },
+  })
+}
+
+export function useFindBooks(attribute: string, value: string) {
+  return useQuery({
+    queryKey: ['findbooks', attribute, value],
+    queryFn: async () => {
+      if (!attribute || !value) {
+        return []
+      }
+      const response = await request
+        .get('/api/v1/findbooks')
+        .query({ attribute, value })
+      return response.body as FindBook[]
+    },
+    enabled: !!attribute && !!value,
   })
 }

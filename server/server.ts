@@ -1,11 +1,13 @@
 import * as Path from 'node:path'
 import booksRouter from './routes/books'
+import findbooksRouter from './routes/findbooks'
 import express from 'express'
 
 const server = express()
 server.use(express.json())
 
 server.use('/api/v1/books', booksRouter)
+server.use(findbooksRouter)
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(Path.resolve('public')))

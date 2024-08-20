@@ -2,9 +2,9 @@ import express from 'express'
 import { getAllBooks } from '../db/db.ts'
 import * as db from '../db/db.ts'
 
-const router = express.Router()
+const booksRouter = express.Router()
 
-router.get('/', async (req, res) => {
+booksRouter.get('/', async (req, res) => {
   try {
     const books = await getAllBooks()
     res.json(books)
@@ -14,17 +14,17 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post('/', async (req, res) => {
+booksRouter.post('/', async (req, res) => {
   try {
     const { title, author, summary } = req.body
-    const newBook = await db.addBook({ title, author, summary })
+    const newBook = await db.addBook({ title, author, summary, attributes: [] })
     res.status(201).json(newBook)
   } catch (error) {
     res.status(500).json({ message: 'Failed to add your new book' })
   }
 })
 
-router.delete('/:id', async (req, res) => {
+booksRouter.delete('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
     await db.deleteBook(id)
@@ -37,7 +37,7 @@ router.delete('/:id', async (req, res) => {
   }
 })
 
-router.put('/:id', async (req, res) => {
+booksRouter.put('/:id', async (req, res) => {
   const { id } = req.params
   const { title, author, summary } = req.body
   try {
@@ -49,23 +49,4 @@ router.put('/:id', async (req, res) => {
   }
 })
 
-export default router
-
-//This doesn't work yet -- problem solve.
-
-// router.get('/find', async (req, res) => {
-//   try {
-//     const { attributes } = req.query
-//     if (!attributes) {
-//       return res.status(400).json({ message: 'Attributes are required' })
-//     }
-//     const attributeList = Array.isArray(attributes)
-//       ? attributes
-//       : [attributes as string]
-//     const books = await db.findBook(attributeList)
-//     res.json(books)
-//   } catch (error) {
-//     console.error(error)
-//     res.status(500).json({ message: 'Error finding books by attributes' })
-//   }
-// })
+export default booksRouter

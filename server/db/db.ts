@@ -22,9 +22,11 @@ export function updateBook(
   return db('books').where('id', id).update(book)
 }
 
-//find new book based on attributes
-// export async function findBook(attribute: string): Promise<FindBook[]> {
-//   return db('books')
-//     .whereRaw('? = ANY(attribute)', attribute)
-//     .select('title', 'author', 'summary')
-// }
+export async function findBook(
+  attribute: string,
+  value: string,
+): Promise<FindBook[]> {
+  return db('findbooks')
+    .where(attribute, value)
+    .select('id', 'title', 'author', 'summary', 'attribute')
+}

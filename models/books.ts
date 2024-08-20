@@ -1,4 +1,5 @@
 export interface BooksData {
+  attributes: string[]
   id: number
   title: string
   author: string
@@ -10,5 +11,5 @@ export interface FindBook {
   title: string
   author: string
   summary: string
-  attributes: string
+  attribute: string
 }

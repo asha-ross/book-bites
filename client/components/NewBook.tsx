@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useAddBook } from '../hooks/hooks'
 import { Link } from 'react-router-dom'
+import { bookAttributes } from './FindBook'
+
+type BookAttribute = (typeof bookAttributes)[number]
 
 export function NewBook() {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
   const [summary, setSummary] = useState('')
   const [showMessage, setShowMessage] = useState(false)
+  const [attributes, setAttributes] = useState<BookAttribute[]>([])
 
   const addBookMutation = useAddBook()
 
@@ -22,15 +26,24 @@ export function NewBook() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await addBookMutation.mutateAsync({ title, author, summary })
+      await addBookMutation.mutateAsync({ title, author, summary, attributes })
 
       setTitle('')
       setAuthor('')
       setSummary('')
+      setAttributes([])
       setShowMessage(true)
     } catch (error) {
       console.error('Error adding book:', error)
     }
+  }
+
+  const toggleAttribute = (attribute: BookAttribute) => {
+    setAttributes((prev) =>
+      prev.includes(attribute)
+        ? prev.filter((a) => a !== attribute)
+        : [...prev, attribute],
+    )
   }
 
   return (
@@ -80,6 +93,26 @@ export function NewBook() {
               required
             />
           </div>
+          <div className="form-group">
+            <fieldset>
+              <legend className="form-label">Attributes:</legend>
+              <div className="attribute-button-grid">
+                {bookAttributes.map((attribute) => (
+                  <button
+                    key={attribute}
+                    type="button"
+                    onClick={() => toggleAttribute(attribute)}
+                    className={`attribute-button ${
+                      attributes.includes(attribute) ? 'selected' : ''
+                    }`}
+                  >
+                    {attribute}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
+          </div>
+
           <div className="button-group">
             <button type="submit" className="form-submit">
               Add Book
