@@ -26,7 +26,12 @@ export function NewBook() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
-      await addBookMutation.mutateAsync({ title, author, summary, attributes })
+      await addBookMutation.mutateAsync({
+        title,
+        author,
+        summary,
+        attribute: attributes.join(', '),
+      })
 
       setTitle('')
       setAuthor('')

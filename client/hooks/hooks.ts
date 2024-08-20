@@ -16,8 +16,16 @@ export function useAddBook() {
   const queryClient = useQueryClient()
   return useMutation({
     mutationFn: async (newBook: Omit<BooksData, 'id'>) => {
-      const response = await request.post('/api/v1/books').send(newBook)
-      return response.body
+      try {
+        const response = await request.post('/api/v1/books').send(newBook)
+        return response.body
+      } catch (error) {
+        console.error('Error in addBook mutation:', error)
+        if (error instanceof Error) {
+          throw new Error(`Failed to add book: ${error.message}`)
+        }
+        throw error
+      }
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['books'] })

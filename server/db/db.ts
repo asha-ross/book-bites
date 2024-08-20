@@ -8,7 +8,18 @@ export function getAllBooks() {
 }
 
 export async function addBook(book: Omit<BooksData, 'id'>): Promise<number[]> {
-  return db('books').insert(book)
+  try {
+    const result = await db('books').insert({
+      title: book.title,
+      author: book.author,
+      summary: book.summary,
+      attribute: book.attribute,
+    })
+    return result
+  } catch (error) {
+    console.error('Error in addBook function:', error)
+    throw error
+  }
 }
 
 export function deleteBook(id: number): Promise<number> {

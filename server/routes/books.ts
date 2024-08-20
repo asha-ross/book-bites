@@ -16,8 +16,8 @@ booksRouter.get('/', async (req, res) => {
 
 booksRouter.post('/', async (req, res) => {
   try {
-    const { title, author, summary } = req.body
-    const newBook = await db.addBook({ title, author, summary, attributes: [] })
+    const { title, author, summary, attribute } = req.body
+    const newBook = await db.addBook({ title, author, summary, attribute })
     res.status(201).json(newBook)
   } catch (error) {
     res.status(500).json({ message: 'Failed to add your new book' })
@@ -39,9 +39,9 @@ booksRouter.delete('/:id', async (req, res) => {
 
 booksRouter.put('/:id', async (req, res) => {
   const { id } = req.params
-  const { title, author, summary } = req.body
+  const { title, author, summary, attribute } = req.body
   try {
-    await db.updateBook(Number(id), { title, author, summary })
+    await db.updateBook(Number(id), { title, author, summary, attribute })
     res.sendStatus(200)
   } catch (error) {
     console.error(error)

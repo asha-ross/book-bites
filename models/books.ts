@@ -1,5 +1,5 @@
 export interface BooksData {
-  attributes: string[]
+  attribute: string
   id: number
   title: string
   author: string
