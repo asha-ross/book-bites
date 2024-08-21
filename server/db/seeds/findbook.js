@@ -12,6 +12,7 @@ export async function seed(knex) {
       title: 'Great Expectations',
       author: 'Charles Dickens',
       summary: 'Orphan levels up, realizes money cannot buy class.',
+      cover_url: '',
     },
     {
       id: 2,
@@ -19,6 +20,7 @@ export async function seed(knex) {
       title: 'Catch-22',
       author: 'Joseph Heller',
       summary: 'War is crazy, paperwork is crazier.',
+      cover_url: '',
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ export async function seed(knex) {
       title: 'Animal Farm',
       author: 'George Orwell',
       summary: 'Pigs discover communism, other animals not impressed.',
+      cover_url: '',
     },
     {
       id: 4,
@@ -33,6 +36,7 @@ export async function seed(knex) {
       title: 'Jurassic Park',
       author: 'Michael Crichton',
       summary: 'Dinosaur theme park, what could go wrong?',
+      cover_url: '',
     },
     {
       id: 5,
@@ -40,6 +44,7 @@ export async function seed(knex) {
       title: 'A Confederacy of Dunces',
       author: 'John Kennedy Toole',
       summary: 'Man-child wreaks havoc in New Orleans, calls it philosophy.',
+      cover_url: '',
     },
     {
       id: 6,
@@ -47,6 +52,7 @@ export async function seed(knex) {
       title: 'Alices Adventures in Wonderland',
       author: 'Lewis Carroll',
       summary: 'Girl follows rabbit, sanity optional.',
+      cover_url: '',
     },
     {
       id: 7,
@@ -54,6 +60,7 @@ export async function seed(knex) {
       title: 'House of Leaves',
       author: 'Mark Z. Danielewski',
       summary: 'House bigger on inside, sanity smaller on outside.',
+      cover_url: '',
     },
     {
       id: 8,
@@ -61,6 +68,7 @@ export async function seed(knex) {
       title: 'The Shining',
       author: 'Stephen King',
       summary: 'Family vacation goes wrong.',
+      cover_url: '',
     },
     {
       id: 9,
@@ -68,6 +76,7 @@ export async function seed(knex) {
       title: 'One Hundred Years of Solitude',
       author: 'Gabriel García Márquez',
       summary: 'Seven generations of mistakes, magic realism cannot fix it.',
+      cover_url: '',
     },
     {
       id: 10,
@@ -75,6 +84,7 @@ export async function seed(knex) {
       title: 'The God of Small Things',
       author: 'Arundhati Roy',
       summary: 'Twins learn family secrets, wish they had not.',
+      cover_url: '',
     },
     {
       id: 11,
@@ -82,6 +92,7 @@ export async function seed(knex) {
       title: "The Hitchhiker's Guide to the Galaxy",
       author: 'Douglas Adams',
       summary: 'Earth demolished, man tours universe in bathrobe.',
+      cover_url: '',
     },
     {
       id: 12,
@@ -90,6 +101,7 @@ export async function seed(knex) {
       author: 'Roald Dahl',
       summary:
         'Poor kid wins candy factory, previous owner definitely not sued.',
+      cover_url: '',
     },
     {
       id: 13,
@@ -98,6 +110,7 @@ export async function seed(knex) {
       author: 'Stephen King',
       summary:
         'Killer clown terrorizes town, children fight back with power of friendship.',
+      cover_url: '',
     },
     {
       id: 14,
@@ -105,6 +118,7 @@ export async function seed(knex) {
       title: 'The Hobbit',
       author: 'J.R.R. Tolkien',
       summary: 'Short man takes long walk, finds jewelry.',
+      cover_url: '',
     },
     {
       id: 15,
@@ -112,6 +126,7 @@ export async function seed(knex) {
       title: 'The Fall of the House of Usher',
       author: 'Edgar Allan Poe',
       summary: 'Siblings have worst family reunion ever, house agrees.',
+      cover_url: '',
     },
     {
       id: 16,
@@ -119,6 +134,7 @@ export async function seed(knex) {
       title: 'Fight Club',
       author: 'Chuck Palahniuk',
       summary: 'Man punches self, starts cult.',
+      cover_url: '',
     },
     {
       id: 17,
@@ -126,6 +142,7 @@ export async function seed(knex) {
       title: 'Finnegans Wake',
       author: 'James Joyce',
       summary: 'Man dreams in word salad, readers cry.',
+      cover_url: '',
     },
     {
       id: 18,
@@ -134,6 +151,7 @@ export async function seed(knex) {
       author: 'Oscar Wilde',
       summary:
         'Victorian gentlemen lie about names, cucumber sandwiches disappear.',
+      cover_url: '',
     },
     {
       id: 19,
@@ -142,6 +160,7 @@ export async function seed(knex) {
       author: 'Kenneth Grahame',
       summary:
         'Anthropomorphic animals have tea, boat rides, and existential crises.',
+      cover_url: '',
     },
     {
       id: 20,
@@ -150,6 +169,7 @@ export async function seed(knex) {
       author: 'Helen Fielding',
       summary:
         'Woman counts calories, chardonnay units, and romantic misadventures.',
+      cover_url: '',
     },
     {
       id: 21,
@@ -158,6 +178,7 @@ export async function seed(knex) {
       author: 'William Faulkner',
       summary:
         'Southern family falls apart, narrated by stream of consciousness.',
+      cover_url: '',
     },
     {
       id: 22,
@@ -165,6 +186,7 @@ export async function seed(knex) {
       title: 'Life of Pi',
       author: 'Yann Martel',
       summary: 'Boy and tiger share lifeboat, debate reality.',
+      cover_url: '',
     },
     {
       id: 23,
@@ -172,6 +194,7 @@ export async function seed(knex) {
       title: 'The Odyssey',
       author: 'Homer',
       summary: 'Man takes decade-long detour home, wife unimpressed.',
+      cover_url: '',
     },
     {
       id: 24,
@@ -179,6 +202,7 @@ export async function seed(knex) {
       title: "Harry Potter and the Philosopher's Stone",
       author: 'J.K. Rowling',
       summary: 'Orphan learns magic, defeats noseless wizard.',
+      cover_url: '',
     },
     {
       id: 25,
@@ -186,6 +210,7 @@ export async function seed(knex) {
       title: 'The Hobbit',
       author: 'J.R.R. Tolkien',
       summary: 'Reluctant burglar steals from dragon, finds magic ring.',
+      cover_url: '',
     },
     {
       id: 26,
@@ -193,6 +218,7 @@ export async function seed(knex) {
       title: 'The Chronicles of Narnia: The Lion, the Witch and the Wardrobe',
       author: 'C.S. Lewis',
       summary: 'Kids enter closet, find Jesus lion.',
+      cover_url: '',
     },
     {
       id: 27,
@@ -200,6 +226,7 @@ export async function seed(knex) {
       title: 'The Metamorphosis',
       author: 'Franz Kafka',
       summary: 'Man becomes bug, family mildly inconvenienced.',
+      cover_url: '',
     },
     {
       id: 28,
@@ -207,6 +234,7 @@ export async function seed(knex) {
       title: 'A Christmas Carol',
       author: 'Charles Dickens',
       summary: 'Grumpy old man haunted into generosity.',
+      cover_url: '',
     },
     {
       id: 29,
@@ -214,6 +242,7 @@ export async function seed(knex) {
       title: 'Good Omens',
       author: 'Terry Pratchett & Neil Gaiman',
       summary: 'Angel and demon lose Antichrist, paperwork nightmare ensues.',
+      cover_url: '',
     },
     {
       id: 30,
@@ -221,6 +250,7 @@ export async function seed(knex) {
       title: 'The Count of Monte Cristo',
       author: 'Alexandre Dumas',
       summary: 'Sailor gets upgrade from prison to fortune, chooses revenge.',
+      cover_url: '',
     },
     {
       id: 31,
@@ -228,6 +258,7 @@ export async function seed(knex) {
       title: 'Dracula',
       author: 'Bram Stoker',
       summary: "Realtor's trip goes badly, garlic sales skyrocket.",
+      cover_url: '',
     },
     {
       id: 32,
@@ -235,6 +266,7 @@ export async function seed(knex) {
       title: 'Around the World in Eighty Days',
       author: 'Jules Verne',
       summary: 'Man accepts bet, invents extreme tourism.',
+      cover_url: '',
     },
     {
       id: 33,
@@ -242,6 +274,7 @@ export async function seed(knex) {
       title: 'Ulysses',
       author: 'James Joyce',
       summary: 'Man walks around Dublin, readers need encyclopedias.',
+      cover_url: '',
     },
     {
       id: 34,
@@ -250,6 +283,7 @@ export async function seed(knex) {
       author: 'Virginia Woolf',
       summary:
         'Family plans trip, ponders existence, rarely reaches lighthouse.',
+      cover_url: '',
     },
     {
       id: 35,
@@ -257,6 +291,7 @@ export async function seed(knex) {
       title: 'The Martian',
       author: 'Andy Weir',
       summary: 'Botanist left on Mars, science solves everything.',
+      cover_url: '',
     },
     {
       id: 36,
@@ -264,6 +299,7 @@ export async function seed(knex) {
       title: 'Percy Jackson & the Olympians: The Lightning Thief',
       author: 'Rick Riordan',
       summary: 'Teen discovers godly parentage, summer camp gets extreme.',
+      cover_url: '',
     },
     {
       id: 37,
@@ -271,6 +307,7 @@ export async function seed(knex) {
       title: 'The Tell-Tale Heart',
       author: 'Edgar Allan Poe',
       summary: 'Man definitely not crazy, floor disagrees.',
+      cover_url: '',
     },
     {
       id: 38,
@@ -278,6 +315,7 @@ export async function seed(knex) {
       title: "The Time Traveler's Wife",
       author: 'Audrey Niffenegger',
       summary: "Man's poor time management ruins relationship.",
+      cover_url: '',
     },
     {
       id: 39,
@@ -285,6 +323,7 @@ export async function seed(knex) {
       title: 'The Great Gatsby',
       author: 'F. Scott Fitzgerald',
       summary: "Poor boy gets rich, throws parties, still can't get the girl.",
+      cover_url: '',
     },
     {
       id: 40,
@@ -292,6 +331,7 @@ export async function seed(knex) {
       title: 'Memoirs of a Geisha',
       author: 'Arthur Golden',
       summary: 'Village girl becomes top-tier entertainer, drama ensues.',
+      cover_url: '',
     },
     {
       id: 41,
@@ -299,6 +339,7 @@ export async function seed(knex) {
       title: 'A Modest Proposal',
       author: 'Jonathan Swift',
       summary: 'Economist suggests eating babies, readers miss the joke.',
+      cover_url: '',
     },
     {
       id: 42,
@@ -306,6 +347,7 @@ export async function seed(knex) {
       title: 'Brave New World',
       author: 'Aldous Huxley',
       summary: "Dystopia where everyone's happy, it's terrifying.",
+      cover_url: '',
     },
     {
       id: 43,
@@ -313,6 +355,7 @@ export async function seed(knex) {
       title: 'Treasure Island',
       author: 'Robert Louis Stevenson',
       summary: 'Boy finds map, pirates find boy, everyone finds trouble.',
+      cover_url: '',
     },
     {
       id: 44,
@@ -321,6 +364,7 @@ export async function seed(knex) {
       author: 'Jules Verne',
       summary:
         "Scientists take wrong turn at Albuquerque, end up in earth's core.",
+      cover_url: '',
     },
     {
       id: 45,
@@ -328,6 +372,7 @@ export async function seed(knex) {
       title: 'Don Quixote',
       author: 'Miguel de Cervantes',
       summary: 'Man reads too many books, attacks windmills.',
+      cover_url: '',
     },
     {
       id: 46,
@@ -335,6 +380,7 @@ export async function seed(knex) {
       title: 'Catch-22',
       author: 'Joseph Heller',
       summary: 'War is mad, staying sane is madder.',
+      cover_url: '',
     },
     {
       id: 47,
@@ -342,6 +388,7 @@ export async function seed(knex) {
       title: 'Pet Sematary',
       author: 'Stephen King',
       summary: 'Sometimes dead is better, guy ignores advice.',
+      cover_url: '',
     },
     {
       id: 48,
@@ -349,6 +396,7 @@ export async function seed(knex) {
       title: 'The Exorcist',
       author: 'William Peter Blatty',
       summary: 'Girl needs Advil, gets priest instead.',
+      cover_url: '',
     },
     {
       id: 49,
@@ -356,6 +404,7 @@ export async function seed(knex) {
       title: 'Wuthering Heights',
       author: 'Emily Brontë',
       summary: 'Ghosts, moors, and toxic relationships: a family tradition.',
+      cover_url: '',
     },
     {
       id: 50,
@@ -363,6 +412,7 @@ export async function seed(knex) {
       title: 'Anna Karenina',
       author: 'Leo Tolstoy',
       summary: 'Married woman finds love, loses everything else.',
+      cover_url: '',
     },
     {
       id: 51,
@@ -370,6 +420,7 @@ export async function seed(knex) {
       title: 'Rebecca',
       author: 'Daphne du Maurier',
       summary: "New wife competes with dead one, house doesn't help.",
+      cover_url: '',
     },
     {
       id: 52,
@@ -377,6 +428,7 @@ export async function seed(knex) {
       title: 'The Haunting of Hill House',
       author: 'Shirley Jackson',
       summary: 'House wants friends, tries too hard.',
+      cover_url: '',
     },
     {
       id: 53,
@@ -384,6 +436,7 @@ export async function seed(knex) {
       title: 'The Yellow Wallpaper',
       author: 'Charlotter Perkins Gilman',
       summary: 'Woman redecorates room with her sanity.',
+      cover_url: '',
     },
     {
       id: 54,
@@ -391,6 +444,7 @@ export async function seed(knex) {
       title: 'Pale Fire',
       author: 'Vladimir Nabokov',
       summary: 'Scholar annotates poem, misses point entirely.',
+      cover_url: '',
     },
     {
       id: 55,
@@ -398,6 +452,7 @@ export async function seed(knex) {
       title: 'House of Leaves',
       author: 'Mark Z. Danielewski',
       summary: 'Book about a book about a film about a house. Also, footnotes.',
+      cover_url: '',
     },
     {
       id: 56,
@@ -405,6 +460,7 @@ export async function seed(knex) {
       title: 'A Clockwork Orange',
       author: 'Anthony Burgess',
       summary: 'Ultraviolence and made-up slang, droogs confused.',
+      cover_url: '',
     },
     {
       id: 57,
@@ -412,6 +468,7 @@ export async function seed(knex) {
       title: 'Three Men in a Boat',
       author: 'Jerome K. Jerome',
       summary: 'Hypochondriacs take river trip, hilarity floods.',
+      cover_url: '',
     },
     {
       id: 58,
@@ -419,6 +476,7 @@ export async function seed(knex) {
       title: 'Jeeves and Wooster',
       author: 'P. G. Wodehouse',
       summary: 'Rich idiot saved repeatedly by smart butler.',
+      cover_url: '',
     },
     {
       id: 59,
@@ -426,6 +484,7 @@ export async function seed(knex) {
       title: "Howl's Moving Castle",
       author: 'Diana Wynne Jones',
       summary: "Girl becomes old, finds love, cleans wizard's house.",
+      cover_url: '',
     },
     {
       id: 60,
@@ -433,6 +492,7 @@ export async function seed(knex) {
       title: 'The Catcher in the Rye',
       author: 'J. D. Salinger',
       summary: 'Teen complains for 200 pages, becomes literary icon.',
+      cover_url: '',
     },
     {
       id: 61,
@@ -440,6 +500,7 @@ export async function seed(knex) {
       title: 'Normal People',
       author: 'Sally Rooney',
       summary: 'Irish millennials miscommunicate, readers swoon.',
+      cover_url: '',
     },
     {
       id: 62,
@@ -448,6 +509,7 @@ export async function seed(knex) {
       author: 'David Foster Wallace',
       summary:
         'Tennis, addiction, and filmography collide. Footnotes mandatory.',
+      cover_url: '',
     },
     {
       id: 63,
@@ -455,6 +517,7 @@ export async function seed(knex) {
       title: 'Mrs. Dalloway',
       author: 'Virginia Woolf',
       summary: 'Woman plans party, remembers entire life.',
+      cover_url: '',
     },
     {
       id: 64,
@@ -462,6 +525,7 @@ export async function seed(knex) {
       title: 'Hatchet',
       author: 'Gary Paulsen',
       summary: 'Boy vs Wild: Canadian Edition.',
+      cover_url: '',
     },
     {
       id: 65,
@@ -470,6 +534,7 @@ export async function seed(knex) {
       author: 'Daniel Defoe',
       summary:
         'Man builds empire on deserted island, ruins it with colonialism.',
+      cover_url: '',
     },
     {
       id: 66,
@@ -477,6 +542,7 @@ export async function seed(knex) {
       title: 'Circe',
       author: 'Madeline Miller',
       summary: 'Witch exiled to island, turns men to pigs literally.',
+      cover_url: '',
     },
     {
       id: 67,
@@ -484,6 +550,7 @@ export async function seed(knex) {
       title: 'The Song of Achilles',
       author: 'Madeline Miller',
       summary: 'Greek heroes in love, everyone else in trouble.',
+      cover_url: '',
     },
   ])
 }
