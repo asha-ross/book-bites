@@ -12,9 +12,6 @@ function Home() {
         <Link to="/NewBook">
           <button className="new-book-button">Add New Book</button>
         </Link>
-        <Link to="/FindBook">
-          <button className="find-book-button">Find New Book</button>
-        </Link>
       </div>
       <main>
         <BooksList />

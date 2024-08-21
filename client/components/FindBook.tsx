@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { X } from 'lucide-react'
+import { X, Plus } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useBookCover, useFindBooks } from '../hooks/hooks'
 import { BooksData } from '../../models/books'
@@ -33,7 +33,14 @@ interface BookItemProps {
 
 type BookAttribute = (typeof bookAttributes)[number]
 
-function BookItem({ book }: BookItemProps) {
+function BookItem({
+  book,
+  onAddToCollection,
+  isInCollection,
+}: BookItemProps & {
+  onAddToCollection: (book: BooksData) => void
+  isInCollection: boolean
+}) {
   const {
     data: coverUrl,
     isLoading,
@@ -59,6 +66,15 @@ function BookItem({ book }: BookItemProps) {
           <strong>Attributes:</strong>
           <p>{book.attribute}</p>
         </div>
+        {!isInCollection && (
+          <button
+            onClick={() => onAddToCollection(book)}
+            className="add-to-collection"
+          >
+            <Plus size={16} />
+            Add To My Collection
+          </button>
+        )}
       </div>
     </li>
   )
@@ -68,7 +84,7 @@ export default function BookAttributeSelect() {
   const [selectedAttributes, setSelectedAttributes] = useState<BookAttribute[]>(
     [],
   )
-
+  const [collection, setCollection] = useState<BooksData[]>([])
   const currentAttribute =
     selectedAttributes[selectedAttributes.length - 1] || ''
 
@@ -80,6 +96,14 @@ export default function BookAttributeSelect() {
         ? prev.filter((a) => a !== attribute)
         : [...prev, attribute],
     )
+  }
+
+  const addToCollection = (book: BooksData) => {
+    setCollection((prev) => [...prev, book])
+  }
+
+  const removeFromCollection = (bookId: string | number) => {
+    setCollection((prev) => prev.filter((book) => book.id !== bookId))
   }
 
   if (error) return <div>Error: {error.message}</div>
@@ -122,11 +146,37 @@ export default function BookAttributeSelect() {
           {books && books.length > 0 ? (
             <ul className="book-list">
               {books.map((book) => (
-                <BookItem key={book.id} book={book} />
+                <BookItem
+                  key={book.id}
+                  book={book}
+                  onAddToCollection={addToCollection}
+                  isInCollection={collection.some((b) => b.id === book.id)}
+                />
               ))}
             </ul>
           ) : (
             <p>No books match the selected attributes</p>
+          )}
+        </div>
+        <div className="collection-container">
+          <h2>Your Book Collection</h2>
+          {collection.length > 0 ? (
+            <ul className="collection-list">
+              {collection.map((book) => (
+                <li key={book.id} className="collection-item">
+                  <h3>{book.title}</h3>
+                  <p>By {book.author}</p>
+                  <button
+                    onClick={() => removeFromCollection(book.id)}
+                    className="remove-from-collection"
+                  >
+                    <X size={16} /> Remove
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Your collection is empty. Add books from the list above!</p>
           )}
         </div>
       </div>

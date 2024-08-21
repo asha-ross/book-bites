@@ -4,8 +4,10 @@ import FindBook from './FindBook'
 
 export default function BooksList() {
   return (
-    <div>
-      <FindBook />
-    </div>
+    <>
+      <div>
+        <FindBook />
+      </div>
+    </>
   )
 }
