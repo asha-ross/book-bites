@@ -82,7 +82,7 @@ export function useFindBooks(attribute: string, value: string) {
   })
 }
 
-export async function fetchBookCover(
+export async function FindBookCover(
   title: string,
   author: string,
 ): Promise<string | null> {
@@ -105,7 +105,7 @@ export async function fetchBookCover(
 export function useBookCover(title: string, author: string) {
   return useQuery({
     queryKey: ['bookCover', title, author],
-    queryFn: () => fetchBookCover(title, author),
+    queryFn: () => FindBookCover(title, author),
     staleTime: Infinity,
   })
 }

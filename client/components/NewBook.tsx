@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { fetchBookCover, useAddBook } from '../hooks/hooks'
+import { FindBookCover, useAddBook } from '../hooks/hooks'
 import { Link } from 'react-router-dom'
 import { bookAttributes } from './FindBook'
 
@@ -27,7 +27,7 @@ export function NewBook() {
   useEffect(() => {
     const fetchCover = async () => {
       if (title && author) {
-        const url = await fetchBookCover(title, author)
+        const url = await FindBookCover(title, author)
         setCoverUrl(url)
       }
     }
