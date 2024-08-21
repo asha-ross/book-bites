@@ -46,38 +46,49 @@ export function BookUpdate({ book }: BookItemProps) {
     setEditedBook((prev) => ({ ...prev, [name]: value }))
   }
 
-  const renderEditMode = () => (
-    <div className="book-card editing">
-      <input
-        name="title"
-        value={editedBook.title}
-        onChange={handleInputChange}
-        className="edit-input"
-      />
-      <input
-        name="author"
-        value={editedBook.author}
-        onChange={handleInputChange}
-        className="edit-input"
-      />
-      <textarea
-        name="summary"
-        value={editedBook.summary}
-        onChange={handleInputChange}
-        className="edit-textarea"
-      />
-      <div>
-        <button className="save-button" onClick={handleUpdate}>
-          Save
-        </button>
-        <button className="cancel-button" onClick={() => setIsEditing(false)}>
-          Cancel
-        </button>
-      </div>
-    </div>
-  )
+  const handleEditClick = () => {
+    setIsEditing(true)
+  }
 
-  const renderDisplayMode = () => (
+  const handleCancelClick = () => {
+    setEditedBook(book)
+    setIsEditing(false)
+  }
+
+  if (isEditing) {
+    return (
+      <div className="book-card editing">
+        <input
+          name="title"
+          value={editedBook.title}
+          onChange={handleInputChange}
+          className="edit-input"
+        />
+        <input
+          name="author"
+          value={editedBook.author}
+          onChange={handleInputChange}
+          className="edit-input"
+        />
+        <textarea
+          name="summary"
+          value={editedBook.summary}
+          onChange={handleInputChange}
+          className="edit-textarea"
+        />
+        <div>
+          <button className="save-button" onClick={handleUpdate}>
+            Save
+          </button>
+          <button className="cancel-button" onClick={handleCancelClick}>
+            Cancel
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  return (
     <div className="book-card">
       {coverUrl && (
         <img
@@ -93,13 +104,11 @@ export function BookUpdate({ book }: BookItemProps) {
         <button className="delete-button" onClick={handleDelete}>
           🗑️
         </button>
-        <button className="edit-button" onClick={() => setIsEditing(true)}>
+        <button className="edit-button" onClick={handleEditClick}>
           ✏️
         </button>
         <button className="find-like-button">🔍</button>
       </div>
     </div>
   )
-
-  return isEditing ? renderEditMode() : renderDisplayMode()
 }
