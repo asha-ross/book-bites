@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { X, Plus } from 'lucide-react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { useBookCover, useFindBooks } from '../hooks/hooks'
 import { BooksData } from '../../models/books'
 
@@ -90,6 +90,17 @@ export default function BookAttributeSelect() {
 
   const { data: books, error } = useFindBooks('attribute', currentAttribute)
 
+  useEffect(() => {
+    const savedCollection = localStorage.getItem('bookCollection')
+    if (savedCollection) {
+      setCollection(JSON.parse(savedCollection))
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('bookCollection', JSON.stringify(collection))
+  }, [collection])
+
   const toggleAttribute = (attribute: BookAttribute) => {
     setSelectedAttributes((prev) =>
       prev.includes(attribute)
@@ -110,6 +121,27 @@ export default function BookAttributeSelect() {
 
   return (
     <>
+      <div className="collection-container">
+        <h2>Your Book Collection</h2>
+        {collection.length > 0 ? (
+          <ul className="collection-list">
+            {collection.map((book) => (
+              <li key={book.id} className="collection-item">
+                <h3>{book.title}</h3>
+                <p>By {book.author}</p>
+                <button
+                  onClick={() => removeFromCollection(book.id)}
+                  className="remove-from-collection"
+                >
+                  <X size={16} /> Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>Your collection is empty. Add books from the list above!</p>
+        )}
+      </div>
       <header>
         <h1>Find Your Next Read</h1>
         <p>Choose the qualities you want in your curated book list</p>
@@ -158,33 +190,6 @@ export default function BookAttributeSelect() {
             <p>No books match the selected attributes</p>
           )}
         </div>
-        <div className="collection-container">
-          <h2>Your Book Collection</h2>
-          {collection.length > 0 ? (
-            <ul className="collection-list">
-              {collection.map((book) => (
-                <li key={book.id} className="collection-item">
-                  <h3>{book.title}</h3>
-                  <p>By {book.author}</p>
-                  <button
-                    onClick={() => removeFromCollection(book.id)}
-                    className="remove-from-collection"
-                  >
-                    <X size={16} /> Remove
-                  </button>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p>Your collection is empty. Add books from the list above!</p>
-          )}
-        </div>
-      </div>
-
-      <div>
-        <Link to="/" className="link-home">
-          Back to Books
-        </Link>
       </div>
     </>
   )
