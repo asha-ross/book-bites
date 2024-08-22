@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { X, Plus } from 'lucide-react'
-// import { Link } from 'react-router-dom'
 import { useBookCover, useFindBooks } from '../hooks/hooks'
 import { BooksData } from '../../models/books'
 
@@ -27,20 +26,90 @@ export const bookAttributes = [
   'Redemption Arc',
 ] as const
 
-interface BookItemProps {
-  book: BooksData
-}
-
 type BookAttribute = (typeof bookAttributes)[number]
 
-function BookItem({
-  book,
+interface FindBookProps {
+  onAddToCollection: (book: BooksData) => void
+  collectionIds: (string | number)[]
+}
+
+export default function FindBook({
   onAddToCollection,
-  isInCollection,
-}: BookItemProps & {
+  collectionIds,
+}: FindBookProps) {
+  const [selectedAttributes, setSelectedAttributes] = useState<BookAttribute[]>(
+    [],
+  )
+  const currentAttribute =
+    selectedAttributes[selectedAttributes.length - 1] || ''
+
+  const { data: books, error } = useFindBooks('attribute', currentAttribute)
+
+  const toggleAttribute = (attribute: BookAttribute) => {
+    setSelectedAttributes((prev) =>
+      prev.includes(attribute)
+        ? prev.filter((a) => a !== attribute)
+        : [...prev, attribute],
+    )
+  }
+
+  if (error) return <div>Error: {error.message}</div>
+
+  return (
+    <>
+      <div className="attribute-container">
+        <h2 className="find-book-title">Pick Your Poison</h2>
+        <div className="attribute-list">
+          {selectedAttributes.map((attribute) => (
+            <span key={attribute} className="attribute-tag">
+              {attribute}
+              <X onClick={() => toggleAttribute(attribute)} />
+            </span>
+          ))}
+        </div>
+        <div className="attribute-button-grid">
+          {bookAttributes.map((attribute) => (
+            <button
+              key={attribute}
+              onClick={() => toggleAttribute(attribute)}
+              className={`attribute-button ${
+                selectedAttributes.includes(attribute) ? 'selected' : ''
+              }`}
+            >
+              {attribute}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="book-list-container">
+        <h2>Matching Books</h2>
+        {books && books.length > 0 ? (
+          <ul className="book-list">
+            {books.map((book) => (
+              <BookItem
+                key={book.id}
+                book={book}
+                onAddToCollection={onAddToCollection}
+                isInCollection={collectionIds.includes(book.id)}
+              />
+            ))}
+          </ul>
+        ) : (
+          <p>No books match the selected attributes</p>
+        )}
+      </div>
+    </>
+  )
+}
+
+interface BookItemProps {
+  book: BooksData
   onAddToCollection: (book: BooksData) => void
   isInCollection: boolean
-}) {
+}
+
+function BookItem({ book, onAddToCollection, isInCollection }: BookItemProps) {
   const {
     data: coverUrl,
     isLoading,
@@ -77,120 +146,5 @@ function BookItem({
         )}
       </div>
     </li>
-  )
-}
-
-export default function BookAttributeSelect() {
-  const [selectedAttributes, setSelectedAttributes] = useState<BookAttribute[]>(
-    [],
-  )
-  const [collection, setCollection] = useState<BooksData[]>([])
-  const currentAttribute =
-    selectedAttributes[selectedAttributes.length - 1] || ''
-
-  const { data: books, error } = useFindBooks('attribute', currentAttribute)
-
-  useEffect(() => {
-    const savedCollection = localStorage.getItem('bookCollection')
-    if (savedCollection) {
-      setCollection(JSON.parse(savedCollection))
-    }
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem('bookCollection', JSON.stringify(collection))
-  }, [collection])
-
-  const toggleAttribute = (attribute: BookAttribute) => {
-    setSelectedAttributes((prev) =>
-      prev.includes(attribute)
-        ? prev.filter((a) => a !== attribute)
-        : [...prev, attribute],
-    )
-  }
-
-  const addToCollection = (book: BooksData) => {
-    setCollection((prev) => [...prev, book])
-  }
-
-  const removeFromCollection = (bookId: string | number) => {
-    setCollection((prev) => prev.filter((book) => book.id !== bookId))
-  }
-
-  if (error) return <div>Error: {error.message}</div>
-
-  return (
-    <>
-      <div className="collection-container">
-        <h2>Your Book Collection</h2>
-        {collection.length > 0 ? (
-          <ul className="collection-list">
-            {collection.map((book) => (
-              <li key={book.id} className="collection-item">
-                <h3>{book.title}</h3>
-                <p>By {book.author}</p>
-                <button
-                  onClick={() => removeFromCollection(book.id)}
-                  className="remove-from-collection"
-                >
-                  <X size={16} /> Remove
-                </button>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>Your collection is empty. Add books from the list above!</p>
-        )}
-      </div>
-      <header>
-        <h1>Find Your Next Read</h1>
-        <p>Choose the qualities you want in your curated book list</p>
-      </header>
-
-      <div className="content-container">
-        <div className="attribute-container">
-          <h2 className="find-book-title">Pick Your Poison</h2>
-          <div className="attribute-list">
-            {selectedAttributes.map((attribute) => (
-              <span key={attribute} className="attribute-tag">
-                {attribute}
-                <X onClick={() => toggleAttribute(attribute)} />
-              </span>
-            ))}
-          </div>
-          <div className="attribute-button-grid">
-            {bookAttributes.map((attribute) => (
-              <button
-                key={attribute}
-                onClick={() => toggleAttribute(attribute)}
-                className={`attribute-button ${
-                  selectedAttributes.includes(attribute) ? 'selected' : ''
-                }`}
-              >
-                {attribute}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="book-list-container">
-          <h2>Matching Books</h2>
-          {books && books.length > 0 ? (
-            <ul className="book-list">
-              {books.map((book) => (
-                <BookItem
-                  key={book.id}
-                  book={book}
-                  onAddToCollection={addToCollection}
-                  isInCollection={collection.some((b) => b.id === book.id)}
-                />
-              ))}
-            </ul>
-          ) : (
-            <p>No books match the selected attributes</p>
-          )}
-        </div>
-      </div>
-    </>
   )
 }

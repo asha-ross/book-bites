@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import BooksList from '../components/Book'
 
 function Home() {
@@ -8,11 +7,6 @@ function Home() {
         <h1 className="title">Book Bites</h1>
         <h2 className="subtitle">literature in a nutshell</h2>
       </header>
-      <div className="button-container">
-        <Link to="/NewBook">
-          <button className="new-book-button">Add New Book</button>
-        </Link>
-      </div>
       <main>
         <BooksList />
       </main>
