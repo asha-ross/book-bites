@@ -23,7 +23,7 @@ export default function BookCollection({
                 onClick={() => onRemoveFromCollection(book.id)}
                 className="remove-from-collection"
               >
-                <X size={16} /> Remove
+                <X size={14} /> Remove
               </button>
             </li>
           ))}
