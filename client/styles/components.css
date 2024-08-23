@@ -1,0 +1,255 @@
+/* Book Card Styles */
+.book-item,
+.collection-item {
+  background-color: var(--card-background);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: var(--card-shadow);
+  width: 100%;
+  max-width: 250px;
+  margin: 5px auto;
+}
+
+.book-item:hover,
+.collection-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.book-cover,
+.cover-placeholder {
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.cover-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 12px;
+  text-align: center;
+}
+
+.book-details {
+  width: 100%;
+  text-align: center;
+}
+
+.book-item h3,
+.collection-item h3 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  display: -webkit-box;
+  display: box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.book-item p,
+.collection-item p {
+  color: var(--text-color);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.book-attributes {
+  margin-top: 0.5rem;
+}
+
+.book-attributes strong {
+  color: var(--secondary-color);
+}
+
+/* Form Styles */
+.form-container {
+  background-color: var(--card-background);
+  max-width: 700px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.form-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.form-input,
+.form-textarea,
+.edit-input,
+.edit-textarea {
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-family: 'Lora', serif;
+  transition: var(--transition);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.edit-input:focus,
+.edit-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(252, 163, 17, 0.2);
+}
+
+.form-textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+/* Button Styles */
+.new-book-button,
+.find-book-button,
+.link-home,
+.form-submit,
+.delete-button,
+.edit-button,
+.find-like-button,
+.save-button,
+.cancel-button,
+.add-to-collection,
+.remove-from-collection {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.new-book-button:hover,
+.find-book-button:hover,
+.link-home:hover,
+.form-submit:hover,
+.delete-button:hover,
+.edit-button:hover,
+.find-like-button:hover,
+.save-button:hover,
+.cancel-button:hover,
+.add-to-collection:hover,
+.remove-from-collection:hover {
+  background-color: #e39008;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Attribute Styles */
+.attribute-container {
+  padding: 1rem;
+  font-family: 'Lora', serif;
+  background-color: var(--card-background);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.attribute-container h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.attribute-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.attribute-tag {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.attribute-tag:hover {
+  background-color: #86a857;
+  transform: translateY(-2px);
+}
+
+.attribute-tag svg {
+  margin-left: 0.8rem;
+  cursor: pointer;
+}
+
+.attribute-button-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.attribute-button {
+  padding: 0.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #f0e6d2;
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.attribute-button:hover {
+  background-color: #e6d8b7;
+  transform: translateY(-2px);
+}
+
+.attribute-button.selected {
+  background-color: var(--accent-color);
+  color: white;
+}

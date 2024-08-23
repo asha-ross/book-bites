@@ -1,0 +1,29 @@
+.success-message {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cover-preview {
+  max-width: 200px;
+  max-height: 300px;
+  object-fit: contain;
+}
+
+.find-book-title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.button-container {
+  text-align: center;
+  margin: 3rem 0;
+}
