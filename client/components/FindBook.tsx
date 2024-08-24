@@ -27,6 +27,10 @@ export const bookAttributes = [
   'The Door is a Jar',
   'Reality Optional.',
   'Redemption Arc',
+  'Enemies to Lovers trope',
+  'Love Triangle',
+  'Personal Redemption',
+  'Villains We Root For',
 ] as const
 
 type BookAttribute = (typeof bookAttributes)[number]

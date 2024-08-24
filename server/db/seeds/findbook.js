@@ -1096,5 +1096,718 @@ export async function seed(knex) {
       summary: 'Expedition enters weird zone, things get weirder.',
       cover_url: '',
     },
+    {
+      id: 134,
+      attribute: 'Enemies to Lovers trope',
+      title: 'Pride and Prejudice',
+      author: 'Jane Austen',
+      summary:
+        'Snarky girl meets rich snob, verbal sparring leads to marriage.',
+      cover_url: '',
+    },
+    {
+      id: 135,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Hating Game',
+      author: 'Sally Thorne',
+      summary:
+        'Office rivals compete for promotion, fall for each other instead.',
+      cover_url: '',
+    },
+    {
+      id: 136,
+      attribute: 'Enemies to Lovers trope',
+      title: 'Red, White & Royal Blue',
+      author: 'Casey McQuiston',
+      summary:
+        "US President's son and British prince turn PR stunt into romance.",
+      cover_url: '',
+    },
+    {
+      id: 137,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Cruel Prince',
+      author: 'Holly Black',
+      summary:
+        'Human girl navigates faerie court, falls for biggest jerk there.',
+      cover_url: '',
+    },
+    {
+      id: 138,
+      attribute: 'Enemies to Lovers trope',
+      title: 'Beach Read',
+      author: 'Emily Henry',
+      summary: 'Romance and literary authors swap genres, rediscover love.',
+      cover_url: '',
+    },
+    {
+      id: 139,
+      attribute: 'Love Triangle',
+      title: 'The Great Gatsby',
+      author: 'F. Scott Fitzgerald',
+      summary: 'Rich guy pines for married woman, narrator caught in middle.',
+      cover_url: '',
+    },
+    {
+      id: 140,
+      attribute: 'Love Triangle',
+      title: 'Wuthering Heights',
+      author: 'Emily Brontë',
+      summary: 'Toxic love spans generations, moors get very dramatic.',
+      cover_url: '',
+    },
+    {
+      id: 141,
+      attribute: 'Love Triangle',
+      title: 'The Hunger Games',
+      author: 'Suzanne Collins',
+      summary: 'Girl fights for survival, boys fight over girl.',
+      cover_url: '',
+    },
+    {
+      id: 142,
+      attribute: 'Love Triangle',
+      title: 'Twilight',
+      author: 'Stephenie Meyer',
+      summary:
+        "Girl can't choose between sparkly vampire and shirtless werewolf.",
+      cover_url: '',
+    },
+    {
+      id: 143,
+      attribute: 'Love Triangle',
+      title: 'The Infernal Devices',
+      author: 'Cassandra Clare',
+      summary: 'Victorian girl torn between best friends, one clockwork.',
+      cover_url: '',
+    },
+    {
+      id: 144,
+      attribute: 'Personal Redemption',
+      title: 'A Christmas Carol',
+      author: 'Charles Dickens',
+      summary:
+        'Grumpy miser gets ghostly wake-up call, learns to love Christmas.',
+      cover_url: '',
+    },
+    {
+      id: 145,
+      attribute: 'Personal Redemption',
+      title: 'The Kite Runner',
+      author: 'Khaled Hosseini',
+      summary:
+        'Man confronts past mistakes, seeks redemption across continents.',
+      cover_url: '',
+    },
+    {
+      id: 146,
+      attribute: 'Personal Redemption',
+      title: 'The Secret Life of Bees',
+      author: 'Sue Monk Kidd',
+      summary:
+        'Girl flees troubled past, finds healing with bee-keeping sisters.',
+      cover_url: '',
+    },
+    {
+      id: 147,
+      attribute: 'Personal Redemption',
+      title: 'The Remains of the Day',
+      author: 'Kazuo Ishiguro',
+      summary:
+        'Butler reflects on life, realizes he missed the point entirely.',
+      cover_url: '',
+    },
+    {
+      id: 148,
+      attribute: 'Personal Redemption',
+      title: 'Circe',
+      author: 'Madeline Miller',
+      summary: 'Witch goddess goes from villain to hero, men turned into pigs.',
+      cover_url: '',
+    },
+    {
+      id: 149,
+      attribute: 'Villains We Root For',
+      title: 'Vicious',
+      author: 'V.E. Schwab',
+      summary:
+        "College roommates turn supervillains, both think they're the hero.",
+      cover_url: '',
+    },
+    {
+      id: 150,
+      attribute: 'Villains We Root For',
+      title: 'Wicked',
+      author: 'Gregory Maguire',
+      summary: 'Misunderstood green girl becomes Wicked Witch of the West.',
+      cover_url: '',
+    },
+    {
+      id: 151,
+      attribute: 'Villains We Root For',
+      title: 'Six of Crows',
+      author: 'Leigh Bardugo',
+      summary: 'Teen criminals pull off heist, readers cheer for delinquents.',
+      cover_url: '',
+    },
+    {
+      id: 152,
+      attribute: 'Villains We Root For',
+      title: 'The Young Elites',
+      author: 'Marie Lu',
+      summary:
+        'Girl with powers chooses dark side, readers along for the ride.',
+      cover_url: '',
+    },
+    {
+      id: 153,
+      attribute: 'Villains We Root For',
+      title: 'The Talented Mr. Ripley',
+      author: 'Patricia Highsmith',
+      summary:
+        'Charming sociopath cons his way through Europe, we enjoy the ride.',
+      cover_url: '',
+    },
+    {
+      id: 155,
+      attribute: 'Villains We Root For',
+      title: 'American Psycho',
+      author: 'Bret Easton Ellis',
+      summary:
+        'Wall Street yuppie moonlights as serial killer, satire gets uncomfortably real.',
+      cover_url: '',
+    },
+    {
+      id: 154,
+      attribute: 'Villains We Root For',
+      title: 'The Picture of Dorian Gray',
+      author: 'Oscar Wilde',
+      summary:
+        'Man stays pretty while portrait gets ugly, vanity has never looked so good.',
+      cover_url: '',
+    },
+    {
+      id: 156,
+      attribute: 'Villains We Root For',
+      title: 'Gone Girl',
+      author: 'Gillian Flynn',
+      summary:
+        'Wife disappears, husband blamed, truth is worse than anyone imagined.',
+      cover_url: '',
+    },
+    {
+      id: 157,
+      attribute: 'Villains We Root For',
+      title: 'The Godfather',
+      author: 'Mario Puzo',
+      summary: "Family man runs crime empire, makes offers you can't refuse.",
+      cover_url: '',
+    },
+    {
+      id: 159,
+      attribute: 'Villains We Root For',
+      title: 'Perfume: The Story of a Murderer',
+      author: 'Patrick Süskind',
+      summary:
+        'Scent-obsessed killer creates the perfect perfume, nose knows no bounds.',
+      cover_url: '',
+    },
+    {
+      id: 158,
+      attribute: 'Villains We Root For',
+      title: 'The Demon King',
+      author: 'Cinda Williams Chima',
+      summary: 'Reformed thief and princess team up, good and evil lines blur.',
+      cover_url: '',
+    },
+    {
+      id: 160,
+      attribute: 'Villains We Root For',
+      title: 'Dexter',
+      author: 'Jeff Lindsay',
+      summary:
+        'Blood spatter analyst moonlights as serial killer, only murders bad guys.',
+      cover_url: '',
+    },
+    {
+      id: 161,
+      attribute: 'Villains We Root For',
+      title: 'The Lies of Locke Lamora',
+      author: 'Scott Lynch',
+      summary: 'Orphan becomes master thief, steals hearts and fortunes.',
+      cover_url: '',
+    },
+    {
+      id: 162,
+      attribute: 'Villains We Root For',
+      title: 'Macbeth',
+      author: 'William Shakespeare',
+      summary:
+        'Ambitious general murders way to crown, things go downhill fast.',
+      cover_url: '',
+    },
+    {
+      id: 163,
+      attribute: 'Villains We Root For',
+      title: 'The Broken Empire Trilogy',
+      author: 'Mark Lawrence',
+      summary:
+        'Sociopathic prince conquers kingdom, readers uncomfortably cheer.',
+      cover_url: '',
+    },
+    {
+      id: 164,
+      attribute: 'Villains We Root For',
+      title: 'Hannibal',
+      author: 'Thomas Harris',
+      summary:
+        'Cannibalistic doctor outwits FBI, makes gourmet meals of rude people.',
+      cover_url: '',
+    },
+    {
+      id: 165,
+      attribute: 'Villains We Root For',
+      title: 'Grendel',
+      author: 'John Gardner',
+      summary: "Beowulf's monster tells his side, existential crisis ensues.",
+      cover_url: '',
+    },
+    {
+      id: 166,
+      attribute: 'Villains We Root For',
+      title: 'Interview with the Vampire',
+      author: 'Anne Rice',
+      summary:
+        'Vampire recounts life story, eternal youth has never seemed so angsty.',
+      cover_url: '',
+    },
+    {
+      id: 167,
+      attribute: 'Villains We Root For',
+      title: 'The Count of Monte Cristo',
+      author: 'Alexandre Dumas',
+      summary:
+        'Wrongfully imprisoned man plots elaborate revenge, justice gets complicated.',
+      cover_url: '',
+    },
+    {
+      id: 168,
+      attribute: 'Villains We Root For',
+      title: 'Nimona',
+      author: 'Noelle Stevenson',
+      summary:
+        "Shapeshifting sidekick helps supervillain, good guys aren't so good.",
+      cover_url: '',
+    },
+    {
+      id: 169,
+      attribute: 'Villains We Root For',
+      title: 'The Ballad of Songbirds and Snakes',
+      author: 'Suzanne Collins',
+      summary:
+        'Future tyrant starts as mentor, Hunger Games origin story gets morally murky.',
+      cover_url: '',
+    },
+    {
+      id: 170,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Unhoneymooners',
+      author: 'Christina Lauren',
+      summary:
+        'Enemies pose as newlyweds, fake honeymoon turns surprisingly real.',
+      cover_url: '',
+    },
+    {
+      id: 171,
+      attribute: 'Enemies to Lovers trope',
+      title: 'You Deserve Each Other',
+      author: 'Sarah Hogle',
+      summary:
+        'Engaged couple tries to make other call off wedding, rekindles love instead.',
+      cover_url: '',
+    },
+    {
+      id: 172,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Spanish Love Deception',
+      author: 'Elena Armas',
+      summary:
+        'Woman brings office nemesis as fake boyfriend to wedding, sparks fly.',
+      cover_url: '',
+    },
+    {
+      id: 173,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Wall of Winnipeg and Me',
+      author: 'Mariana Zapata',
+      summary:
+        'Assistant quits job for grumpy athlete, ends up in marriage of convenience.',
+      cover_url: '',
+    },
+    {
+      id: 174,
+      attribute: 'Enemies to Lovers trope',
+      title: 'Much Ado About Nothing',
+      author: 'William Shakespeare',
+      summary:
+        'Bickering duo falls in love while setting up friends, Renaissance rom-com ensues.',
+      cover_url: '',
+    },
+    {
+      id: 175,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Viscount Who Loved Me',
+      author: 'Julia Quinn',
+      summary:
+        'Overprotective sister falls for her nemesis, Regency London swoons.',
+      cover_url: '',
+    },
+    {
+      id: 176,
+      attribute: 'Enemies to Lovers trope',
+      title: 'Shatter Me',
+      author: 'Tahereh Mafi',
+      summary:
+        'Girl with deadly touch falls for enemy soldier, dystopia gets complicated.',
+      cover_url: '',
+    },
+    {
+      id: 177,
+      attribute: 'Enemies to Lovers trope',
+      title: 'From Lukov with Love',
+      author: 'Mariana Zapata',
+      summary: 'Figure skaters forced to partner up, ice melts between rivals.',
+      cover_url: '',
+    },
+    {
+      id: 178,
+      attribute: 'Enemies to Lovers trope',
+      title: 'To Kill a Kingdom',
+      author: 'Alexandra Christo',
+      summary:
+        'Siren princess must kill prince, ends up falling for him instead.',
+      cover_url: '',
+    },
+    {
+      id: 179,
+      attribute: 'Enemies to Lovers trope',
+      title: 'The Wrath and the Dawn',
+      author: 'Renée Ahdieh',
+      summary:
+        'Girl marries murderous king for revenge, finds love and magic instead.',
+      cover_url: '',
+    },
+    {
+      id: 180,
+      attribute: 'Slow Burn Romance',
+      title: 'Persuasion',
+      author: 'Jane Austen',
+      summary:
+        'Woman regrets dumping sailor, spends years pining before reunion.',
+      cover_url: '',
+    },
+    {
+      id: 181,
+      attribute: 'Slow Burn Romance',
+      title: 'The Hating Game',
+      author: 'Sally Thorne',
+      summary: 'Office rivals realize sexual tension was love all along.',
+      cover_url: '',
+    },
+    {
+      id: 182,
+      attribute: 'Slow Burn Romance',
+      title: 'Outlander',
+      author: 'Diana Gabaldon',
+      summary:
+        'Time-traveling nurse falls for kilted Scot, takes 850 pages to kiss.',
+      cover_url: '',
+    },
+    {
+      id: 183,
+      attribute: 'Slow Burn Romance',
+      title: 'The Flatshare',
+      author: "Beth O'Leary",
+      summary:
+        'Roommates share bed at different times, fall in love via Post-it notes.',
+      cover_url: '',
+    },
+    {
+      id: 184,
+      attribute: 'Slow Burn Romance',
+      title: 'From Lukov with Love',
+      author: 'Mariana Zapata',
+      summary:
+        "Figure skaters partner up, take forever to realize they're perfect match.",
+      cover_url: '',
+    },
+    {
+      id: 185,
+      attribute: 'Slow Burn Romance',
+      title: 'The Simple Wild',
+      author: 'K.A. Tucker',
+      summary:
+        'City girl meets rugged pilot in Alaska, love takes flight slowly.',
+      cover_url: '',
+    },
+    {
+      id: 186,
+      attribute: 'Slow Burn Romance',
+      title: 'The Kiss Quotient',
+      author: 'Helen Hoang',
+      summary:
+        'Autistic woman hires escort for lessons, feelings develop gradually.',
+      cover_url: '',
+    },
+    {
+      id: 187,
+      attribute: 'Slow Burn Romance',
+      title: "Howl's Moving Castle",
+      author: 'Diana Wynne Jones',
+      summary:
+        'Cursed girl and wizard dance around feelings amidst magic and mayhem.',
+      cover_url: '',
+    },
+    {
+      id: 188,
+      attribute: 'Slow Burn Romance',
+      title: 'The Shadows Between Us',
+      author: 'Tricia Levenseller',
+      summary:
+        'Girl plots to woo and kill king, inconveniently falls in love instead.',
+      cover_url: '',
+    },
+    {
+      id: 189,
+      attribute: 'Fake Relationship',
+      title: 'The Wedding Date',
+      author: 'Jasmine Guillory',
+      summary: 'Strangers fake-date at wedding, real feelings crash the party.',
+      cover_url: '',
+    },
+    {
+      id: 190,
+      attribute: 'Fake Relationship',
+      title: "To All the Boys I've Loved Before",
+      author: 'Jenny Han',
+      summary:
+        'Teen girl fake-dates boy to avoid crush, plans backfire spectacularly.',
+      cover_url: '',
+    },
+    {
+      id: 191,
+      attribute: 'Fake Relationship',
+      title: 'The Unhoneymooners',
+      author: 'Christina Lauren',
+      summary:
+        'Enemies pose as newlyweds on free honeymoon, paradise gets complicated.',
+      cover_url: '',
+    },
+    {
+      id: 192,
+      attribute: 'Fake Relationship',
+      title: 'The Wall of Winnipeg and Me',
+      author: 'Mariana Zapata',
+      summary:
+        'Woman agrees to marry grumpy athlete for green card, scores touchdown in love.',
+      cover_url: '',
+    },
+    {
+      id: 193,
+      attribute: 'Fake Relationship',
+      title: 'Red, White & Royal Blue',
+      author: 'Casey McQuiston',
+      summary:
+        'First Son fakes friendship with Prince, special relationship ensues.',
+      cover_url: '',
+    },
+    {
+      id: 194,
+      attribute: 'Fake Relationship',
+      title: 'The Kiss Quotient',
+      author: 'Helen Hoang',
+      summary:
+        'Woman hires escort to practice dating, equations of love solve themselves.',
+      cover_url: '',
+    },
+    {
+      id: 195,
+      attribute: 'Fake Relationship',
+      title: 'Act Like It',
+      author: 'Lucy Parker',
+      summary:
+        'Actors pretend to date for publicity, stage kiss becomes real deal.',
+      cover_url: '',
+    },
+    {
+      id: 196,
+      attribute: 'Fake Relationship',
+      title: 'The Bride Test',
+      author: 'Helen Hoang',
+      summary:
+        "Autistic man's mom arranges fake marriage, real love wasn't part of plan.",
+      cover_url: '',
+    },
+    {
+      id: 197,
+      attribute: 'Fake Relationship',
+      title: 'Dating You / Hating You',
+      author: 'Christina Lauren',
+      summary:
+        'Agents fake relationship at retreat, competition and attraction ensue.',
+      cover_url: '',
+    },
+    {
+      id: 198,
+      attribute: 'Fake Relationship',
+      title: 'The Roommate',
+      author: 'Rosie Danan',
+      summary:
+        'Woman pretends to date porn star roommate, things get steamy off-camera.',
+      cover_url: '',
+    },
+    {
+      id: 199,
+      attribute: 'Multiverse',
+      title: 'The Long Earth',
+      author: 'Terry Pratchett & Stephen Baxter',
+      summary:
+        'Humanity discovers infinite Earths, hilarity and philosophy ensue.',
+      cover_url: '',
+    },
+    {
+      id: 200,
+      attribute: 'Multiverse',
+      title: 'Dark Matter',
+      author: 'Blake Crouch',
+      summary:
+        'Man kidnapped to alternate reality, fights through multiverse to get home.',
+      cover_url: '',
+    },
+    {
+      id: 201,
+      attribute: 'Multiverse',
+      title: 'The Space Between Worlds',
+      author: 'Micaiah Johnson',
+      summary:
+        "Woman travels to alternate Earths where she's dead, finds life complicated.",
+      cover_url: '',
+    },
+    {
+      id: 202,
+      attribute: 'Multiverse',
+      title: 'The Ten Thousand Doors of January',
+      author: 'Alix E. Harrow',
+      summary:
+        'Girl discovers doors to other worlds, writes herself into adventure.',
+      cover_url: '',
+    },
+    {
+      id: 203,
+      attribute: 'Multiverse',
+      title: 'The Midnight Library',
+      author: 'Matt Haig',
+      summary: 'Suicidal woman explores alternate lives, finds reason to live.',
+      cover_url: '',
+    },
+    {
+      id: 204,
+      attribute: 'Multiverse',
+      title: 'Eternal Ones',
+      author: 'Kirsten Miller',
+      summary:
+        'Teen reincarnates across universes, past lives catch up dramatically.',
+      cover_url: '',
+    },
+    {
+      id: 205,
+      attribute: 'Multiverse',
+      title: 'A Thousand Pieces of You',
+      author: 'Claudia Gray',
+      summary:
+        "Girl chases father's killer through dimensions, falls for multiple versions of boy.",
+      cover_url: '',
+    },
+    {
+      id: 206,
+      attribute: 'Multiverse',
+      title: 'The First Fifteen Lives of Harry August',
+      author: 'Claire North',
+      summary:
+        'Man relives life repeatedly, tries to save world from time traveler.',
+      cover_url: '',
+    },
+    {
+      id: 207,
+      attribute: 'Multiverse',
+      title: 'The 7½ Deaths of Evelyn Hardcastle',
+      author: 'Stuart Turton',
+      summary:
+        'Man solves murder in Groundhog Day-esque loop, body-hops for clues.',
+      cover_url: '',
+    },
+    {
+      id: 208,
+      attribute: 'Multiverse',
+      title: 'An Absolutely Remarkable Thing',
+      author: 'Hank Green',
+      summary:
+        'Woman becomes famous after alien encounter, multiverse gets weird.',
+      cover_url: '',
+    },
+    {
+      id: 209,
+      attribute: 'Antihero',
+      title: 'The Girl with the Dragon Tattoo',
+      author: 'Stieg Larsson',
+      summary:
+        "Genius hacker solves crimes, breaks laws, doesn't play well with others.",
+      cover_url: '',
+    },
+    {
+      id: 210,
+      attribute: 'Antihero',
+      title: 'Artemis Fowl',
+      author: 'Eoin Colfer',
+      summary:
+        'Child criminal mastermind kidnaps fairy, ends up saving magical world.',
+      cover_url: '',
+    },
+    {
+      id: 211,
+      attribute: 'Antihero',
+      title: 'The Broken Empire Trilogy',
+      author: 'Mark Lawrence',
+      summary:
+        'Sociopathic prince conquers kingdom, readers uncomfortably cheer.',
+      cover_url: '',
+    },
+    {
+      id: 212,
+      attribute: 'Antihero',
+      title: 'Dexter',
+      author: 'Jeff Lindsay',
+      summary:
+        'Blood spatter analyst moonlights as serial killer, only murders bad guys.',
+      cover_url: '',
+    },
+    {
+      id: 213,
+      attribute: 'Antihero',
+      title: 'The Blade Itself',
+      author: 'Joe Abercrombie',
+      summary:
+        "Torturer, berserker, and nobleman save world, no one's hands stay clean.",
+      cover_url: '',
+    },
+    {
+      id: 214,
+      attribute: 'Antihero',
+      title: 'Six of Crows',
+      author: 'Leigh Bardugo',
+      summary:
+        'Teen criminals pull off heist, readers cheer for lovable delinquents.',
+      cover_url: '',
+    },
   ])
 }
