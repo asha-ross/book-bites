@@ -1003,7 +1003,8 @@ export async function seed(knex) {
       attribute: 'Magical Realism',
       title: 'The House of the Spirits',
       author: 'Isabel Allende',
-      summary: 'Three generations of women, one clairvoyant, much drama.',
+      summary:
+        "Psychic abuela forecasts family feuds and fascism, can't prevent either.",
       cover_url: '',
     },
     {

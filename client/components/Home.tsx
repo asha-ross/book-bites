@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <h1 className="title">Book Bites</h1>
-        <h2 className="subtitle">literature in a nutshell</h2>
+        <h1 className="title">Trope Trove</h1>
+        <h2 className="subtitle">where book clichés become your treasures</h2>
       </header>
       <div className="books-container">
         <div className="books-content">
